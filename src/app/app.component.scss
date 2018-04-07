@@ -1,0 +1,26 @@
+@import '../styles.scss';
+
+#menu{
+    width: 50%;
+    min-width: 300px;
+    position: relative;
+    padding: 2em;
+    font-size: 15px;
+}
+
+.form {
+    display:flex;
+    flex-direction: column;
+}
+
+.flex-child {
+    display: flex;
+    flex-basis:200px;
+    order:1;
+}
+
+.form-child {
+    label {
+        @extend .flex-child;
+    }
+}

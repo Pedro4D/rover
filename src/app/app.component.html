@@ -1,0 +1,22 @@
+<section id="menu">
+  <div style="text-align:center">
+    <h1>
+      {{ title }}!
+    </h1>
+  </div>
+  <div>
+    <form class="form">
+      <div class="form-child">
+          <label for="col">Columns for the field</label>
+          <input [(ngModel)]="col" name="col" [ngModelOptions]="{standalone: true}"/>
+      </div>
+      <div class="form-child">
+        <label for="col">Rows for the field</label>
+        <input [(ngModel)]="row" name="row"  [ngModelOptions]="{standalone: true}"/>
+      </div>
+      <button (click)="initField($event)" [disabled]="!(col && row)">Start</button>
+    </form>
+  </div>
+</section>
+<app-field [col]="col" [row]="row" *ngIf="field"></app-field>
+

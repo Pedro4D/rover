@@ -1,0 +1,23 @@
+<section id="view">
+  <div id="moon">
+      <div class="field" [ngStyle]="{'grid-template-columns': 'repeat('+col+', 1fr)','grid-template-rows': 'repeat('+row+', 1fr)'}">
+          <span *ngFor="let i of items; let idx=index;" class="plot"></span>
+    
+      </div>
+      <div id="rover" [ngStyle]="{'grid-template-columns': 'repeat('+col+', 1fr)','grid-template-rows': 'repeat('+row+', 1fr)'}">
+        <div class="rover" [ngStyle]="{'grid-column-start': initCol,'grid-row-start': initRow}">
+          <div #rov class="bg E"></div>
+        </div>
+      </div>
+  </div>
+  <div id="panel">
+      <div>
+          Position: {{canMove}},{{orientation}},({{lastRow}},{{lastCol}})
+      </div>
+      <div>
+          Insert Command: <input type="text" (input)="validateKey($event)" /><br/>
+          Command to execute: {{command}}<br/>
+          <button (click)="startSimulation()" [disabled]="!command">Start</button>
+      </div>
+  </div>
+</section>
